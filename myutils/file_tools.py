@@ -3,7 +3,6 @@ import os
 from pathlib import Path
 
 def calculate_hash(file_path: Path, algorithm: str = 'sha256') -> str:
-    """计算指定文件的哈希值"""
     if not file_path.is_file():
         return f"错误: {file_path} 不是一个有效文件。"
 
@@ -18,7 +17,6 @@ def calculate_hash(file_path: Path, algorithm: str = 'sha256') -> str:
     return h.hexdigest()
 
 def list_tree(dir_path: Path, max_depth: int = 2, current_depth: int = 0):
-    """(简易版) 打印目录树"""
     if not dir_path.is_dir():
         print(f"错误: {dir_path} 不是一个有效目录。")
         return
